@@ -112,10 +112,11 @@ class QCameraParameters: public CameraParameters
 public:
     QCameraParameters();
     QCameraParameters(const String8 &params);
-    static const char CameraParameters::FOCUS_MODE_MANUAL_POSITION[];
-    static const char CameraParameters::WHITE_BALANCE_MANUAL_CCT[];
+    
     ~QCameraParameters();
 
+    static const char FOCUS_MODE_MANUAL_POSITION[];
+    static const char WHITE_BALANCE_MANUAL_CCT[];
     // Supported PREVIEW/RECORDING SIZES IN HIGH FRAME RATE recording, sizes in pixels.
     // Example value: "800x480,432x320". Read only.
     static const char KEY_QC_SUPPORTED_HFR_SIZES[];

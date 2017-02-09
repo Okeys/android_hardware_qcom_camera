@@ -32,6 +32,7 @@
 #include <utils/Errors.h>
 #include "QCamera2HWI.h"
 #include "QCameraStream.h"
+#include "../stack/mm-camera-interface/inc/mm_camera_dbg.h"
 
 // Media dependencies
 #ifdef USE_MEDIA_EXTENSIONS

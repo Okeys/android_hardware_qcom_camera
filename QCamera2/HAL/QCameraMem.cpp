@@ -39,6 +39,7 @@
 #include "QCamera2HWI.h"
 #include "QCameraMem.h"
 #include "QCameraParameters.h"
+#include "../stack/mm-camera-interface/inc/mm_camera_dbg.h"
 
 // Media dependencies
 #ifdef USE_MEDIA_EXTENSIONS
@@ -1217,6 +1218,8 @@ int qcamera::QCameraVideoMemory::allocate(int count, int size)
         packet->meta_handle = mNativeHandle[i];
         packet->buffer_type = kMetadataBufferTypeCameraSource;
 #endif
+	native_handle_t * nh = mNativeHandle[i];
+        if (!nh) {
             ALOGE("%s: Error in getting video native handle", __func__);
             return NO_MEMORY;
         }
@@ -1939,4 +1942,6 @@ void *qcamera::QCameraGrallocMemory::getPtr(int index) const
         return (void *)BAD_INDEX;
     }
     return mCameraMemory[index]->data;
-}; //namespace qcamera
+}
+//namespace qcamera
+};

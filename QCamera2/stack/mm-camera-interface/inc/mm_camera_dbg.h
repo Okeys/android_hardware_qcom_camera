@@ -41,6 +41,7 @@
     #include <utils/Log.h>
   #else
     #include <stdio.h>
+    #undef ALOGE
     #define ALOGE CDBG
   #endif
   #undef CDBG
@@ -65,6 +66,7 @@
   #define CDBG_HIGH(fmt, args...)  ALOGD(fmt, ##args)
   #define CDBG_ERROR(fmt, args...)  ALOGE(fmt, ##args)
 #else
+  #undef CDBG_ERROR
   #define CDBG_HIGH(fmt, args...) fprintf(stderr, fmt, ##args)
   #define CDBG_ERROR(fmt, args...) fprintf(stderr, fmt, ##args)
 #endif
